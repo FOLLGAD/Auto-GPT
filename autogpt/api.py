@@ -386,7 +386,7 @@ def subgoals():
                     + "ONLY answer this message with a numbered list of short, standalone subtasks. write nothing else. Make sure to make the subtask descriptions as brief as possible.",
                 ),
             ],
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",
             temperature=0.2,
             max_tokens=150,
             cfg=cfg,
@@ -452,11 +452,11 @@ def godmode_main():
                 print_log("User entity failed", severity=WARNING, errorMsg=e)
 
         openai_key = request_data.get("openai_key", None)
-        gpt_model = "gpt-3.5-turbo"
+        gpt_model = "gpt-4o-mini"
         if len(openai_key or "") > 0:
-            gpt_model = request_data.get("gpt_model", "gpt-3.5-turbo")
+            gpt_model = request_data.get("gpt_model", "gpt-4o-mini")
         else:
-            gpt_model = "gpt-3.5-turbo"
+            gpt_model = "gpt-4o-mini"
 
         cfg = Config()
         cfg.openai_api_key = openai_key

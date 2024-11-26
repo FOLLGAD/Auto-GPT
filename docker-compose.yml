@@ -15,6 +15,8 @@ services:
     volumes:
       - ./:/app
     profiles: ["exclude-from-up"]
+    ports:
+      - "8080:8080"
 
   redis:
     image: "redis/redis-stack-server:latest"

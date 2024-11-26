@@ -19,9 +19,9 @@ def test_make_agent() -> None:
         response.usage.prompt_tokens = 1
         response.usage.completion_tokens = 1
         mock.return_value = response
-        start_agent("Test Agent", "chat", "Hello, how are you?", "gpt-3.5-turbo")
+        start_agent("Test Agent", "chat", "Hello, how are you?", "gpt-4o-mini")
         agents = list_agents()
         assert "List of agents:\n0: chat" == agents
-        start_agent("Test Agent 2", "write", "Hello, how are you?", "gpt-3.5-turbo")
+        start_agent("Test Agent 2", "write", "Hello, how are you?", "gpt-4o-mini")
         agents = list_agents()
         assert "List of agents:\n0: chat\n1: write" == agents

@@ -15,7 +15,7 @@ def test_initial_values(config):
     assert config.debug_mode == False
     assert config.continuous_mode == False
     assert config.speak_mode == False
-    assert config.fast_llm_model == "gpt-3.5-turbo"
+    assert config.fast_llm_model == "gpt-4o-mini"
     assert config.smart_llm_model == "gpt-4"
     assert config.fast_token_limit == 4000
     assert config.smart_token_limit == 8000
@@ -56,8 +56,8 @@ def test_set_fast_llm_model(config):
     # Store model name to reset it after the test
     fast_llm_model = config.fast_llm_model
 
-    config.set_fast_llm_model("gpt-3.5-turbo-test")
-    assert config.fast_llm_model == "gpt-3.5-turbo-test"
+    config.set_fast_llm_model("gpt-4o-mini-test")
+    assert config.fast_llm_model == "gpt-4o-mini-test"
 
     # Reset model name
     config.set_fast_llm_model(fast_llm_model)

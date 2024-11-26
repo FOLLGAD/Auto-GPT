@@ -46,13 +46,13 @@ def test_count_string_tokens():
     """Test that the string tokens are counted correctly."""
 
     string = "Hello, world!"
-    assert count_string_tokens(string, model_name="gpt-3.5-turbo-0301") == 4
+    assert count_string_tokens(string, model_name="gpt-4o-mini-0301") == 4
 
 
 def test_count_string_tokens_empty_input():
     """Test that the string tokens are counted correctly."""
 
-    assert count_string_tokens("", model_name="gpt-3.5-turbo-0301") == 0
+    assert count_string_tokens("", model_name="gpt-4o-mini-0301") == 0
 
 
 def test_count_message_tokens_invalid_model():

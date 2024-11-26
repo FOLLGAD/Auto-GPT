@@ -25,7 +25,7 @@ def test_generate_context_empty_inputs(mocker):
     prompt = ""
     relevant_memory = ""
     full_message_history = []
-    model = "gpt-3.5-turbo-0301"
+    model = "gpt-4o-mini-0301"
 
     # Act
     result = generate_context(prompt, relevant_memory, full_message_history, model)
@@ -61,7 +61,7 @@ def test_generate_context_valid_inputs():
         ),
         create_chat_message("user", "Haha, that's funny."),
     ]
-    model = "gpt-3.5-turbo-0301"
+    model = "gpt-4o-mini-0301"
 
     # When
     result = generate_context(prompt, relevant_memory, full_message_history, model)
@@ -75,4 +75,4 @@ def test_generate_context_valid_inputs():
     assert result[2] >= 0
     assert result[1] >= 0
     assert len(result[3]) >= 2  # current_context should have at least 2 messages
-    assert result[1] <= 2048  # token limit for GPT-3.5-turbo-0301 is 2048 tokens
+    assert result[1] <= 2048  # token limit for gpt-4o-mini-0301 is 2048 tokens

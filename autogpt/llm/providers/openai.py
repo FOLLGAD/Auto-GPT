@@ -1,8 +1,8 @@
 from autogpt.llm.base import ChatModelInfo, EmbeddingModelInfo
 
 OPEN_AI_CHAT_MODELS = {
-    "gpt-3.5-turbo": ChatModelInfo(
-        name="gpt-3.5-turbo",
+    "gpt-4o-mini": ChatModelInfo(
+        name="gpt-4o-mini",
         prompt_token_cost=0.002,
         completion_token_cost=0.002,
         max_tokens=4096,

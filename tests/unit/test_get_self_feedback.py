@@ -35,7 +35,7 @@ def test_get_self_feedback(mocker):
     feedback = Agent.get_self_feedback(
         agent_mock,
         thoughts,
-        "gpt-3.5-turbo",
+        "gpt-4o-mini",
     )
 
     # Check if the response is a non-empty string

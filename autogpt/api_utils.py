@@ -73,7 +73,7 @@ def generate_task_name(cfg, command_name: str, arguments: str):
                     f"Describe this action as succinctly as possible in one short sentence:\n\n```\nCOMMAND: {command_name}\nARGS: {arguments}\n```",
                 ),
             ],
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",
             temperature=0.2,
             cfg=cfg,
         )

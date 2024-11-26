@@ -7,7 +7,6 @@ from autogpt.commands.command import CommandRegistry, command
 from autogpt.commands.web_requests import scrape_links, scrape_text
 from autogpt.config import Config
 from autogpt.memory import get_memory
-from autogpt.processing.text import summarize_text
 from autogpt.prompts.generator import PromptGenerator
 from autogpt.speech import say_text
 from autogpt.url_utils.validators import validate_url
@@ -136,26 +135,6 @@ def execute_command(
             )
     except Exception as e:
         return f"Error: {str(e)}"
-
-
-@command(
-    "get_text_summary", "Get text summary from a single URL", '"url": "<single url>", "question": "<question>"'
-)
-@validate_url
-def get_text_summary(url: str, question: str, cfg: Config, **kwargs) -> str:
-    """Return the results of a Google search
-
-    Args:
-        url (str): The url to scrape
-        question (str): The question to summarize the text for
-
-    Returns:
-        str: The summary of the text
-    """
-    text = scrape_text(url)
-    summary = summarize_text(url, text, question, cfg)
-    return f""" "Result" : {summary}"""
-
 
 @command("get_hyperlinks", "Get text summary from a single URL", '"url": "<single url>"')
 @validate_url
