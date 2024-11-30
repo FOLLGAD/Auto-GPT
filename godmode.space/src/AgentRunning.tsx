@@ -208,7 +208,7 @@ export const AgentRunning = ({
 }) => {
   const { sessions } = useSessions();
   const currentSession = React.useMemo(
-    () => sessions.find((s) => s.agent_id === agent.id),
+    () => sessions?.find((s) => s.agent_id === agent.id),
     [sessions, agent.id]
   );
   const isArchived = React.useMemo(
